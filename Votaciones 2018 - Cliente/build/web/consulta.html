@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Consulta de mesa - Votaciones 2018</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/bootstrap.css" />
+    <script src="assets/js/bootstrap.js"></script>
+</head>
+<body>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Votaciones 2018</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                <a class="nav-link" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="consulta.html">Consulta de mesa</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="voto.html">Emsión de voto</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Acerca de</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid" style="padding:3%;">
+        <!-- carousel -->
+        
+        <h1>Consulta de mesa</h1>
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- form consulta individual -->
+                            <form>
+                                <fieldset>
+                                    <legend>Consulta individual</legend>
+                                    <div class="form-group">
+                                        <label for="CUIInput">CUI</label>
+                                        <input type="number" class="form-control" id="CUIInput" aria-describedby="CUIHelp" placeholder="Escriba un CUI" required>
+                                        <small id="CUIHelp" class="form-text text-muted">Ingrese su CUI para consultar mesa.</small>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Consultar</button>
+                                </fieldset>
+                            </form>
+                            <!-- form consulta individual -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                    <div class="card-body">
+                        <!-- carga masiva -->
+                        <form>
+                            <fieldset>
+                                <legend>Consulta masiva</legend>
+                                <div class="input-group mb-3" aria-describedby="fileHelp1">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="inputGroupFileUpload" lang="es" required/>
+                                        <label class="custom-file-label btn" for="inputGroupFileUpload">Elegir archivo</label>
+                                    </div>
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-primary">Consultar</button>
+                                    </div>
+                                </div>
+                                <small id="fileHelp1" class="form-text text-muted">Elija un archivo que contenga los CUI cuyas mesas desea consultar.</small>
+                                <script>
+                                    $('#inputGroupFileUpload').on('change',function(){
+                                        //get the file name
+                                        var fileName = $(this).val();
+                                        //replace the "Choose a file" label
+                                        $(this).next('.custom-file-label').html(fileName.replace('C:\\fakepath\\',''));
+                                    })
+                                </script>
+                            </fieldset>
+                        </form>
+                        <!-- carga masiva -->
+                        <!-- POR SI EL FORM CON CSS LOCO NO SIRVE -->
+                        <!--
+                            <form>
+                                <fieldset>
+                                    <legend>Consulta masiva</legend>
+                                    <div class="form-group">
+                                    <label for="exampleInputFile">Carga de archivo</label>
+                                    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                                    <small id="fileHelp" class="form-text text-muted">Elija un archivo que contenga los CUI cuyas mesas desea consultar.</small>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Consultar</button>
+                                </fieldset>
+                            </form>
+                        -->
+                        <!-- POR SI EL FORM CON CSS LOCO NO SIRVE -->
+                    </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+        <!-- carousel -->
+    </div>
+</body>
+</html>
